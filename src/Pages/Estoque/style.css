@@ -1,0 +1,156 @@
+.estoque-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #3a3a3a 0%, #1a1a1a 100%);
+  padding: 20px;
+  color: white;
+}
+
+.estoque-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
+}
+
+.add-button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.add-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.add-button:hover {
+  background-color: #45a049;
+}
+
+.no-products {
+  text-align: center;
+  font-size: 18px;
+  color: #ccc;
+  margin-top: 30px;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.products-table th,
+.products-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.products-table th {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-weight: bold;
+}
+
+.products-table tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-button,
+.stock-button,
+.delete-button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.edit-button {
+  background-color: #2196F3;
+  color: white;
+}
+
+.stock-button {
+  background-color: #FF9800;
+  color: white;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #0b7dda;
+}
+
+.stock-button:hover {
+  background-color: #e68a00;
+}
+
+.delete-button:hover {
+  background-color: #da190b;
+}
+
+.error {
+  color: #f44336;
+  text-align: center;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.estoque-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.estoque-header h1 {
+  flex: 1;
+  text-align: center;
+}
+
+.dashboard-button {
+  position: absolute;
+  right: 0;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #6a6a6a 0%, #4a4a4a 100%);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-button:hover {
+  background: linear-gradient(135deg, #7a7a7a 0%, #5a5a5a 100%);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+

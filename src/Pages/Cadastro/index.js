@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { useNotification } from '../../Context/NotificationContext'
 import { Container, Form, SubContainerSign } from './style'
 import Input from '../../Components/Input/index'
 import Botao from '../../Components/Botao/index'
@@ -12,6 +13,7 @@ const Cadastro = () => {
   const [loading, setLoading] = useState()
   const [form, setForm] = useState([])
   const navigate = useNavigate()
+  const { success, error: showError } = useNotification()
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -29,14 +31,14 @@ const Cadastro = () => {
           password: form.password
         })
         if (responseLogin === true) {
-          alert('usuário Cadastrado com Sucesso')
+          success('Usuário cadastrado com sucesso!')
           navigate('/home')
         }
     }
       setLoading(false)
     }
     catch (err) {
-      alert('Algo deu errado com o Cadastro' + err)
+      showError('Algo deu errado com o cadastro: ' + err)
     }
   }
 

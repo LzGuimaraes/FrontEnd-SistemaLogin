@@ -1,70 +1,133 @@
-# Getting Started with Create React App
+# Sistema de Login
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Um sistema completo de autenticação desenvolvido com React e Node.js, oferecendo funcionalidades de login e cadastro de usuários com validação de dados.
 
-## Available Scripts
+## Estrutura do Projeto
 
-In the project directory, you can run:
+```
+Sistema-de-login/
+├── public/                # Arquivos públicos do React
+├── src/                   # Código fonte da aplicação
+│   ├── Components/        # Componentes reutilizáveis
+│   │   ├── Botao/         # Componente de botão customizado
+│   │   └── Input/         # Componente de input customizado
+│   ├── Pages/             # Páginas da aplicação
+│   │   ├── Cadastro/      # Página de cadastro de usuários
+│   │   ├── Login/         # Página de login
+│   │   └── styles/        # Estilos globais
+│   ├── Routes/            # Configuração de rotas
+│   ├── Services/          # Serviços de comunicação com API
+│   ├── Utils/             # Utilitários (validadores)
+│   └── index.js           # Ponto de entrada da aplicação React
+├── .env                   # Variáveis de ambiente
+├── package.json           # Dependências e scripts
+└── server.js              # Servidor backend (API)
+```
 
-### `npm start`
+## Descrição dos Arquivos
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Arquivos Principais
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **server.js**: Servidor Express que fornece as APIs de login e cadastro. Utiliza um array de usuários como banco de dados em memória para simplificar o exemplo.
 
-### `npm test`
+- **src/index.js**: Ponto de entrada da aplicação React, renderiza o componente principal e aplica os estilos globais.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **.env**: Contém a variável de ambiente `REACT_APP_API_LOGIN` que define a URL base da API.
 
-### `npm run build`
+### Componentes
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **src/Components/Input/index.js**: Componente reutilizável para campos de entrada, com estilização personalizada.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **src/Components/Botao/index.js**: Componente reutilizável para botões, com estilização personalizada.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Páginas
 
-### `npm run eject`
+- **src/Pages/Login/index.js**: Página de login com formulário, validação e integração com o serviço de autenticação.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **src/Pages/Cadastro/index.js**: Página de cadastro com formulário, validação de campos e integração com o serviço de usuários.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **src/Pages/styles/global.js**: Estilos globais da aplicação usando styled-components.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Rotas
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **src/Routes/routes.js**: Configuração das rotas da aplicação usando React Router.
 
-## Learn More
+- **src/Routes/ProtectedRoutes.js**: Componente para proteger rotas que exigem autenticação.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Serviços
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **src/Services/UserServices.js**: Serviço que gerencia a comunicação com a API para login, cadastro e autenticação de usuários.
 
-### Code Splitting
+### Utilitários
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **src/Utils/validadores.js**: Funções para validação de campos de formulário (email, senha, nome, telefone).
 
-### Analyzing the Bundle Size
+## Como Utilizar o Projeto
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Pré-requisitos
 
-### Making a Progressive Web App
+- Node.js instalado
+- NPM ou Yarn instalado
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Configuração
 
-### Advanced Configuration
+1. Clone o repositório
+2. Instale as dependências:
+   ```
+   npm install
+   ```
+3. Configure o arquivo `.env` na raiz do projeto:
+   ```
+   REACT_APP_API_LOGIN=http://localhost:3333
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Executando o Projeto
 
-### Deployment
+1. Inicie o servidor backend:
+   ```
+   node server.js
+   ```
+   O servidor será iniciado na porta 3333.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+2. Em outro terminal, inicie a aplicação React:
+   ```
+   npm start
+   ```
+   A aplicação será iniciada na porta 3000.
 
-### `npm run build` fails to minify
+3. Acesse a aplicação em seu navegador: http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Utilizando a Aplicação
+
+#### Login
+
+- Acesse a página inicial (http://localhost:3000)
+- Insira um email e senha válidos
+  - Usuário padrão: admin@example.com
+  - Senha padrão: 123456
+- Clique no botão "Entrar"
+
+#### Cadastro
+
+- Na página de login, clique em "Cadastrar"
+- Preencha todos os campos do formulário:
+  - Nome (mínimo 3 caracteres)
+  - Telefone (mínimo 8 dígitos)
+  - Email (deve conter @ e .)
+  - Senha (mínimo 7 caracteres)
+  - Confirmar senha (deve ser igual à senha)
+- Clique no botão "Efetuar Cadastro!"
+
+## Validações
+
+O sistema possui as seguintes validações:
+
+- **Email**: Deve conter @ e .
+- **Senha**: Deve ter mais de 6 caracteres
+- **Nome**: Deve ter mais de 2 caracteres
+- **Telefone**: Deve ter pelo menos 8 dígitos
+- **Confirmar Senha**: Deve ser igual à senha informada
+
+## Autenticação
+
+O sistema utiliza um token simples armazenado no localStorage para manter o usuário autenticado. As rotas protegidas verificam a existência deste token antes de permitir o acesso.

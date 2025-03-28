@@ -24,7 +24,7 @@ export default class UserService {
     
 
     usuarioAutenticado() {
-        return localStorage.getItem("token")!== undefined ? true : false
+        return localStorage.getItem("token") !== null && localStorage.getItem("token") !== undefined
     }
 
     async logout () {
